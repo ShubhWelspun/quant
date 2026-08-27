@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Divisibility Rules Notes - Ultra Compact B&W</title>
+<style>
+  @page { size: A4; margin: 8mm; }
+  body { font-family: Arial, sans-serif; font-size: 10px; line-height: 1.25; color: #000; background: #fff; margin: 0; padding: 0; }
+  h1 { text-align: center; font-size: 14px; text-transform: uppercase; border-bottom: 2px solid #000; margin: 0 0 6px 0; padding-bottom: 2px; }
+  h2 { font-size: 11px; border-bottom: 1px solid #000; margin: 6px 0 3px 0; text-transform: uppercase; background: #f0f0f0; padding: 1px 4px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 4px; font-size: 9.5px; }
+  th, td { border: 1px solid #000; padding: 2px 4px; text-align: left; }
+  th { background-color: #e6e6e6; }
+  ul { margin: 0; padding-left: 14px; }
+  li { margin-bottom: 2px; }
+  .box { border: 1px solid #000; padding: 4px; margin-bottom: 4px; }
+  .bold { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>Divisibility Rules & Solved Examples</h1>
+
+<div class="grid">
+  <div>
+    <h2>1. Divisibility Rules Summary</h2>
+    <table>
+      <tr><th>Rule</th><th>Condition</th><th>Example</th></tr>
+      <tr><td><b>1</b></td><td>Universal factor</td><td>Divides all integers</td></tr>
+      <tr><td><b>2</b></td><td>Last digit is even</td><td>1658, 24632</td></tr>
+      <tr><td><b>3 & 9</b></td><td>Sum of digits $\div$ 3 or 9</td><td>342 ($3+4+2=9$)</td></tr>
+      <tr><td><b>4 & 8</b></td><td>Last 2 digits $\div 4$ / Last 3 $\div 8$</td><td>1624 / 23408</td></tr>
+      <tr><td><b>5 & 10</b></td><td>Ends in 5/0 (for 5) or 0 (for 10)</td><td>105, 1050</td></tr>
+      <tr><td><b>6</b></td><td>Divisible by both 2 & 3</td><td>126 (Even & sum 9)</td></tr>
+      <tr><td><b>11</b></td><td>(Sum Odd Pos) - (Sum Even Pos) = 0 or $11k$</td><td>9174 ($16-5=11$)</td></tr>
+      <tr><td><b>25 / 125</b></td><td>Last 2 digits $\div 25$ / Last 3 $\div 125$</td><td>46325, 30450</td></tr>
+    </table>
+
+    <div class="box">
+      <b>Prime Truncation Rules:</b><br>
+      • <b>7:</b> Remaining - 2(Last) $\rightarrow$ $343 \implies 34 - 6 = 28 \checkmark$<br>
+      • <b>13:</b> Remaining + 4(Last) $\rightarrow$ $325 \implies 32 + 20 = 52 \checkmark$<br>
+      • <b>17:</b> Remaining - 5(Last) $\rightarrow$ $1904 \implies 190 - 20 = 170 \checkmark$<br>
+      • <b>19:</b> Remaining + 2(Last) $\rightarrow$ $361 \implies 36 + 2 = 38 \checkmark$
+    </div>
+
+    <h2>2. Type 1: Basic Verification</h2>
+    <ul>
+      <li><b>Q1:</b> $7848 \div 3,4,9$? Sum $=27 \div 3,9$. Last 2 $=48 \div 4$. <b>[Yes]</b></li>
+      <li><b>Q2:</b> $1659 \div 7$? $165 - (9\times2) = 147 \div 7$. <b>[Yes]</b></li>
+      <li><b>Q3:</b> $8591 \div 11$? $(9+8)-(5+1) = 11$. <b>[Yes]</b></li>
+      <li><b>Q4:</b> Div by 9 & 11? <b>Ans: (b) 10,098</b> (Sum=18, Diff=0).</li>
+    </ul>
+
+    <h2>3. Type 2: Find Missing Single Digit</h2>
+    <ul>
+      <li><b>Q13:</b> $54x32 \div 9 \implies 14+x=18 \implies \mathbf{x=4}$</li>
+      <li><b>Q14:</b> $734K \div 6 \implies K \in \text{even}$, $14+K \div 3 \implies \mathbf{K=4}$</li>
+      <li><b>Q15:</b> Largest $x$ in $2365x4 \div 4 \implies x4 \div 4 \implies \mathbf{x=8}$</li>
+      <li><b>Q16:</b> $396258N \div 8 \implies 58N \div 8 \implies \mathbf{N=4}$</li>
+      <li><b>Q17:</b> $46393x8 \div 11 \implies (15+x)-18=0 \implies \mathbf{x=3}$</li>
+      <li><b>Q18:</b> $18x3945 \div 11 \implies 6+x=11 \implies \mathbf{x=5}$</li>
+      <li><b>Q19:</b> $94x2357 \div 11 \implies 8+x=11 \implies \mathbf{x=3}$</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>4. Type 3: Two Unknown Digits (x, y)</h2>
+    <ul>
+      <li><b>Q20:</b> $3425xy \div 36 (4 \times 9)$:
+        <br>• $y=2 \implies 15+x=18 \implies \mathbf{(3,2)}$
+        <br>• $y=6 \implies 19+x=27 \implies \mathbf{(8,6)}$
+      </li>
+      <li><b>Q21:</b> $545884805x6 \div 72 (8 \times 9) \implies 5x6 \div 8 \implies \mathbf{x=3 \text{ or } 7}$.</li>
+      <li><b>Q22:</b> $789263x84 \div 72 \implies 784/8 (y=4)$, $7+x+4=9 \implies x=2$. $\mathbf{xy=8}$.</li>
+      <li><b>Q23:</b> $4432A43B \div 9, 5 \implies B=5, A+B+2=9 \implies \mathbf{A+B=7}$.</li>
+      <li><b>Q24:</b> $1330x558y2 \div 88 \implies 18-(9+x+y)=0 \implies \mathbf{x+y=9}$.</li>
+    </ul>
+
+    <h2>5. Type 4: Smallest/Largest Add or Subtract</h2>
+    <ul>
+      <li><b>Q30:</b> Min digit to add to $4531$ for $\div 4$: Next is $32 \implies 32-31=\mathbf{1}$.</li>
+      <li><b>Q31:</b> Min sub from $210$ for $\div 11$: $210/11 \implies \text{Rem } 1 \implies \mathbf{1}$.</li>
+      <li><b>Q32:</b> $335 + 5A7 = 8B2 \div 3$: $B=A+4$, Sum $=14+A \implies \mathbf{A=4, B=8}$.</li>
+      <li><b>Q33:</b> Min digit to add to $81247$ for $\div 3$: Sum $=22$, Next $24 \implies \mathbf{2}$.</li>
+      <li><b>Q34:</b> Min sub from $6583$ for $\div 5$: Ends in $0 \implies 6583-6580=\mathbf{3}$.</li>
+      <li><b>Q35:</b> Min digit to add to $5911$ for $\div 9$: Sum $=16$, Next $18 \implies \mathbf{2}$.</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
